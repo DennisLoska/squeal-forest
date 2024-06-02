@@ -9,5 +9,5 @@
     "srcDir": "./src/",
     "failOnError": false,
     "camelCaseColumnNames": false,
-    "dbUrl": "postgres://prince_charming:rapunzel-let-down-your-hair@localhost:5432/squeal_forest"
+    "dbUrl": "postgres://prince_charming:rapunzel_let_down_your_hair@localhost:5432/squeal_forest"
 }

@@ -3,7 +3,7 @@ import { PreparedQuery } from "@pgtyped/runtime";
 
 /** 'FindUserByName' parameters type */
 export interface IFindUserByNameParams {
-    name?: string | null | void;
+    name: string;
 }
 
 /** 'FindUserByName' return type */
@@ -24,18 +24,18 @@ const findUserByNameIR: any = {
     params: [
         {
             name: "name",
-            required: false,
+            required: true,
             transform: { type: "scalar" },
-            locs: [{ a: 33, b: 37 }],
+            locs: [{ a: 33, b: 38 }],
         },
     ],
-    statement: "SELECT * FROM users WHERE name = :name",
+    statement: "SELECT * FROM users WHERE name = :name!",
 };
 
 /**
  * Query generated from SQL:
  * ```
- * SELECT * FROM users WHERE name = :name
+ * SELECT * FROM users WHERE name = :name!
  * ```
  */
 export const findUserByName = new PreparedQuery<
