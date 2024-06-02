@@ -1,0 +1,13 @@
+{
+    "transforms": [
+        {
+            "mode": "sql",
+            "include": "queries/**/*.sql",
+            "emitTemplate": "{{dir}}/{{name}}.queries.ts"
+        }
+    ],
+    "srcDir": "./src/",
+    "failOnError": false,
+    "camelCaseColumnNames": false,
+    "dbUrl": "postgres://prince_charming:rapunzel-let-down-your-hair@localhost:5432/squeal_forest"
+}
