@@ -3,7 +3,11 @@ import pgtyped from "./pgtyped-evaluation";
 
 async function main() {
     await client.connect();
-    await pgtyped.getUser("Rapunzel", client);
+
+    // pgtyped evaluation
+    await pgtyped.getUserByName("Rapunzel", client);
+    await pgtyped.getUserByEmail("snowwhite@fairytale.com", client);
+
     await client.end();
 }
 

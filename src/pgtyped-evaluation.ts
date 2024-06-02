@@ -1,11 +1,17 @@
 import { Client } from "pg";
-import { findUserByName } from "./queries/user.queries";
+import { findUserByEmail, findUserByName } from "./queries/user.queries";
 
-async function getUser(user: string, client: Client) {
+async function getUserByName(user: string, client: Client) {
     const users = await findUserByName.run({ name: user }, client);
-    console.log(`Found: ${users[0].name}`);
+    console.log(`Found by name: ${users[0].name}`);
+}
+
+async function getUserByEmail(email: string, client: Client) {
+    const users = await findUserByEmail.run({ email: email }, client);
+    console.log(`Found by email: ${users[0].name}`);
 }
 
 export default {
-    getUser,
+    getUserByName,
+    getUserByEmail,
 };
