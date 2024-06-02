@@ -1,11 +1,9 @@
-import { client } from "./client";
+import { Client } from "pg";
 import { findUserByName } from "./queries/user.queries";
 
-async function getUser(user: string) {
-    await client.connect();
+async function getUser(user: string, client: Client) {
     const users = await findUserByName.run({ name: user }, client);
     console.log(`Found: ${users[0].name}`);
-    await client.end();
 }
 
 export default {
